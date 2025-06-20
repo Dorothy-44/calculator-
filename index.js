@@ -22,7 +22,11 @@ buttons.forEach(button => {
       }
     } else if (action === 'backspace') {
       currentInput = currentInput.slice(0, -1);
-    } else if (value) {
+    }
+    else if(action === '^' ){
+      currentInput = Math.pow(currentInput, '^');
+    }
+    else if (value) {
       currentInput += value;
     }
 
@@ -42,8 +46,12 @@ document.addEventListener('keydown', (e) => {
       currentInput = 'Error';
     }
   } else if (e.key === 'Backspace') {
-    currentInput = currentInput.slice(0, -1);
-  } else if (e.key.toLowerCase() === 'c') {
+  currentInput = currentInput.slice(0, -1);
+  } 
+  else if(action === '^' ){
+      currentInput = Math.pow(currentInput, '^');
+  }
+  else if (e.key.toLowerCase() === 'c') {
     currentInput = '';
   }
   updateDisplay();
