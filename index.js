@@ -20,7 +20,7 @@ buttons.forEach(button => {
       } catch {
         currentInput = 'Error';
       }
-    } else if (action === 'backspace') {
+    } else if (action === 'DEL') {
       currentInput = currentInput.slice(0, -1);
     }
     else if(action === '^' ){
